@@ -1,0 +1,86 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.navigation {
+	padding: 0;
+	margin: 0;
+	background: #333;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	width: 100%;
+	}
+
+.navigation li {
+		display: inline-block;
+		padding: 5px 10px;
+	}
+
+.navigation li # {
+			color: #e1e1e1;
+			text-decoration: none;
+	}
+
+.navigation li # &:hover {
+				color: lighten(#e1e1e1, 20%);
+	}
+
+.active {
+		background-color: lighten(#333, 20%);
+	}
+.main {
+	margin-top: 30px;
+}
+
+.slide {
+	 background-attachment: fixed;
+	 width: 100%;
+	 height: 100%;
+	 position: relative;
+	 padding: 30px;
+	 color: white;
+}
+
+.button {
+	display: block;
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	margin-left: -25px;
+	background-image: url(../images/donuts.jpg);
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+}
+
+#slide1{
+	background-image: url(../images/slide1/IMAG0106.jpg);
+	background-size: 100%;
+}
+
+#slide2{
+	background-image: url(../images/slide2/IMAG0107.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	z-index: 9;
+}
+
+#slide3{
+	background-image: url(../images/slide3/IMAG0212.jpg);
+	background-size: cover;
+}
+#slide4{
+	background-image: url(../images/slide4/IMAG0106_bw.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	z-index: 10;
+}
