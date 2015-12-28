@@ -1,8 +1,0 @@
-This is a basic pomodoro clock.
-
-on page load, enable short session, long session, and plus button
-short session sets timer to 5min, long session sets timer to 25min, plus/minus buttons add/subtract 1min
-can't subtract if timer is set to zero, can't add more than 59min
-start button works only if timer is < zero
-stop works only after start
-reset works only after stop and sets timer to last value before clicking start
