@@ -13,6 +13,7 @@ codepen link:http://codepen.io/trigal2012/pen/qbqNjY
 
 
 still to do:
+<li>add decimal point to the UI
 <li>add keyboard input instead of just button click
 <li>create nice UI
 <li>add responsive design
