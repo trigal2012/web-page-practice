@@ -29,6 +29,7 @@
 					tempNum = [];
 					formula.push(id.currentTarget.innerHTML);
 					$("#operators").children().prop('disabled',true);
+					$("#numbers").children().prop('disabled',false);
 					$('#display').append(function(){
 						return "<b>"+id.currentTarget.innerHTML+ " </b>";
 					});
@@ -36,6 +37,7 @@
 					//checks if equal sign was clicked
 					if(id.currentTarget.innerHTML=== "="){
 						$("#operators").children().prop('disabled',false);
+						$("#numbers").children().prop('disabled',true);
 						formula.pop();
 						formulaStr=formula.join('');
 						formula = [];
@@ -75,7 +77,8 @@
 				result = 0;
 				$('#display').empty();
 				$('#result').empty();
-
+				$("#operators").children().prop('disabled',true);
+				$("#numbers").children().prop('disabled',false);
 			}
 		}); //end of button click action
 			
@@ -118,13 +121,13 @@ button {
 <body>
 <div>
 	<div id='fullDisplay'>
-		<p id='display'>1+1+2+3=</p>
-		<p id='result'>7</p>
+		<p id='display'></p>
+		<p id='result'></p>
 	</div>
 	<div>
-		<p><button id="1">1</button><button id="2">2</button><button id="3">3</button><button id="4">4</button><button id="5">5</button></p>
-		<p><button id="6">6</button><button id="7">7</button><button id="8">8</button><button id="9">9</button><button id="0">0</button></p>
-		<p id="operators"><button id="add" class="operator" disabled='true'>+</button><button id="sub" class="operator" disabled='true'>-</button><button id="mul" class="operator" disabled='true'>*</button><button id="div" class="operator" disabled='true'>/</button><button id="cal" class="operator" disabled='true'>=</button></p>
+		<p id='numbers'><button id="1">1</button><button id="2">2</button><button id="3">3</button><button id="4">4</button><button id="5">5</button></br>
+		<button id="6">6</button><button id="7">7</button><button id="8">8</button><button id="9">9</button><button id="0">0</button></p>
+		<p id="operators"><button id="add" disabled='true'>+</button><button id="sub" disabled='true'>-</button><button id="mul" disabled='true'>*</button><button id="div" class="operator" disabled='true'>/</button><button id="cal"  disabled='true'>=</button></p>
 		<p><button id='ac'>AC</button></p>
 	</div>
 </body>
