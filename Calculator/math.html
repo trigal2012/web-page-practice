@@ -21,8 +21,14 @@
 					tempNum.push(id.currentTarget.innerHTML);
 				} else{
 					formula.push(tempNum.join(''));
+					$('#display').append(function(){
+						return "<b>"+tempNum.join('')+ " </b>";
+					});
 					tempNum = [];
 					formula.push(id.currentTarget.innerHTML);
+					$('#display').append(function(){
+						return "<b>"+id.currentTarget.innerHTML+ " </b>";
+					});
 					
 					//checks if equal sign was clicked
 					if(id.currentTarget.innerHTML=== "="){
@@ -31,11 +37,25 @@
 						formula = [];
 						if(result === 0){
 							result = eval(formulaStr);
+							$('#display').append(function(){
+								return "<b>"+result+ " </b>";
+							});
+							$('#result').empty();
+							$('#result').append(function(){
+								return "<b>"+result+ " </b>";
+							});
 							console.log(result);
 						} else {
 							tempForm = [result,formulaStr];
 							formulaStr2 = tempForm.join('');
 							result = eval(formulaStr2);
+							$('#display').append(function(){
+								return "<b>"+result+ " </b>";
+							});
+							$('#result').empty();
+							$('#result').append(function(){
+								return "<b>"+result+ " </b>";
+							});
 							console.log(result);
 						}
 
@@ -47,6 +67,9 @@
 				tempNum = [];
 				formulaStr = "";
 				result = 0;
+				$('#display').empty();
+				$('#result').empty();
+
 			}
 		}); //end of button click action
 			
@@ -61,5 +84,6 @@
 	<p><button id="add">+</button><button id="sub">-</button><button id="mul">*</button><button id="div">/</button><button id="cal">=</button></p>
 	<p><button id='ac'>AC</button></p>
 	<p id='display'></p>
+	<p id='result'></p>
 </body>
 </html>
