@@ -9,33 +9,39 @@
 		var tempNum = [];
 		var formulaStr = "";
 		var result = 0;
+		$('#display').empty();
+		$('#result').empty();
 
 		//monitor what's clicked
 		$('button').click(function(id){
-			
+			console.log(id);
 			//checks to see if user clicked on all clear button
 			if(id.currentTarget.innerHTML != "AC"){
 				//checks for a number
 				if(!isNaN(id.currentTarget.innerHTML)){
 					tempNum.push(id.currentTarget.innerHTML);
+					$("#operators").children().prop('disabled',false);
+					$('#display').append(function(){
+						return "<b>"+id.currentTarget.innerHTML+ " </b>";
+					});
 				} else{
 					formula.push(tempNum.join(''));
-					$('#display').append(function(){
-						return "<b>"+tempNum.join('')+ " </b>";
-					});
 					tempNum = [];
 					formula.push(id.currentTarget.innerHTML);
+					$("#operators").children().prop('disabled',true);
 					$('#display').append(function(){
 						return "<b>"+id.currentTarget.innerHTML+ " </b>";
 					});
 					
 					//checks if equal sign was clicked
 					if(id.currentTarget.innerHTML=== "="){
+						$("#operators").children().prop('disabled',false);
 						formula.pop();
 						formulaStr=formula.join('');
 						formula = [];
 						if(result === 0){
 							result = eval(formulaStr);
+							$('#display').empty();
 							$('#display').append(function(){
 								return "<b>"+result+ " </b>";
 							});
@@ -48,6 +54,7 @@
 							tempForm = [result,formulaStr];
 							formulaStr2 = tempForm.join('');
 							result = eval(formulaStr2);
+							$('#display').empty();
 							$('#display').append(function(){
 								return "<b>"+result+ " </b>";
 							});
@@ -87,15 +94,22 @@ button {
 	width: 338px;
 }
 
-#display{
+#fullDisplay{
 	width: 338px;
 	height: 60px;
 	border: solid 2px #3333FF;
 	background-color: #66CCFF;
 	margin: 5px;
 	font-size: 20px;
-
+	font-family: Arial;
+	text-align: right;
 }
+#display, #result{
+	margin-right: 2px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
 
 </style>
 
@@ -103,11 +117,15 @@ button {
 
 <body>
 <div>
-	<p><button id="1">1</button><button id="2">2</button><button id="3">3</button><button id="4">4</button><button id="5">5</button></p>
-	<p><button id="6">6</button><button id="7">7</button><button id="8">8</button><button id="9">9</button><button id="0">0</button></p>
-	<p><button id="add">+</button><button id="sub">-</button><button id="mul">*</button><button id="div">/</button><button id="cal">=</button></p>
-	<p><button id='ac'>AC</button></p>
-	<p id='display'></p>
-	<p id='result'></p>
+	<div id='fullDisplay'>
+		<p id='display'>1+1+2+3=</p>
+		<p id='result'>7</p>
+	</div>
+	<div>
+		<p><button id="1">1</button><button id="2">2</button><button id="3">3</button><button id="4">4</button><button id="5">5</button></p>
+		<p><button id="6">6</button><button id="7">7</button><button id="8">8</button><button id="9">9</button><button id="0">0</button></p>
+		<p id="operators"><button id="add" class="operator" disabled='true'>+</button><button id="sub" class="operator" disabled='true'>-</button><button id="mul" class="operator" disabled='true'>*</button><button id="div" class="operator" disabled='true'>/</button><button id="cal" class="operator" disabled='true'>=</button></p>
+		<p><button id='ac'>AC</button></p>
+	</div>
 </body>
 </html>
