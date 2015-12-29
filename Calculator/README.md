@@ -5,3 +5,5 @@
 <li>add, subtract, multiply and divide numbers</li>
 <li>clear the input field with a clear button</li>
 <li>chain mathematical operations between each click of the equal button</li>
+<li>display input</li>
+<li>display result</li>
