@@ -9,4 +9,4 @@ http://codepen.io/trigal2012/pen/GoqyOv
 <p>Nice to have:</p>
 <li>add the twitter bird icon to the tweet button</li>
 <li>add more quotes</li>
-<li>create game by asking user to specify the movie the wuote came from and the character who said it</li>
+<li>create game by asking user to specify the movie the quote came from and the character who said it</li>
