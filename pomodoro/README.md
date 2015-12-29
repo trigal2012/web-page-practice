@@ -11,5 +11,9 @@
 </ul>
 
 <p>A codepen version can be found here, http://codepen.io/trigal2012/pen/bEwymZ
+
+<p>Nice to have:</p>
+<li>change Stop to Pause so user can pause timer</li>
+<li>design nice UI</li>
 </body>
 </html>
