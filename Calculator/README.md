@@ -7,3 +7,6 @@
 <li>chain mathematical operations between each click of the equal button</li>
 <li>display input</li>
 <li>display result</li>
+
+
+codepen link:http://codepen.io/trigal2012/pen/qbqNjY
